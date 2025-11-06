@@ -6,11 +6,9 @@ on:
         description: 'Target server directory, leave blank for root directory'
         required: false
         default: ''
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository Code
         uses: actions/checkout@v3
