@@ -12,6 +12,16 @@ jobs:
     steps:
       - name: Checkout Repository Code
         uses: actions/checkout@v3
+        
+      - name: Test SSH Connectivity
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY_GODADDY }}" > private_key.pem
+          chmod 600 private_key.pem
+          ssh -o StrictHostKeyChecking=no \
+              -i private_key.pem \
+              git_deployer_38d8f5cb38_524420@pvk.25e.myftpupload.com "echo 'SSH connection successful!'"
+        continue-on-error: true
+
       - name: Synchronize Files with GoDaddy WordPress Hosting Server
         uses: godaddy-wordpress/gd-wordpress-deployer@v1
         with:
