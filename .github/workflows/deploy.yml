@@ -22,3 +22,4 @@ jobs:
           ssh_user: "git_deployer_38d8f5cb38_524420"
           ssh_private_key: ${{secrets.GODADDY_SECRET}}
           deployment_dest: ${{ github.event.inputs.deployment_dest }}
+          enable_health_check: "yes"
