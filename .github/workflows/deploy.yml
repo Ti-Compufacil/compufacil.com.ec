@@ -1,8 +1,9 @@
-- name: Test SSH connectivity
-  run: |
-    ssh -o StrictHostKeyChecking=no \
-        -i <(echo "${{ secrets.SSH_PRIVATE_KEY_GODADDY }}") \
-        ${SSH_USER}@${REMOTE_HOST} "echo 'SSH OK';"
-  env:
+name: Test SSH connectivity
+run: |
+  ssh -o StrictHostKeyChecking=no \
+      -i <(echo "${{ secrets.SSH_PRIVATE_KEY_GODADDY }}") \
+       ${SSH_USER}@${REMOTE_HOST} "echo 'SSH OK';"
+       
+env:
     SSH_USER: ${{ secrets.SSH_USER }}
     REMOTE_HOST: ${{ secrets.SSH_HOST }}
