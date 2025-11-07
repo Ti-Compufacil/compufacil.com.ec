@@ -19,13 +19,13 @@ jobs:
           chmod 600 private_key.pem
           ssh -o StrictHostKeyChecking=no \
               -i private_key.pem \
-              git_deployer_e7667b119d_524420@pvk.25e.myftpupload.com "echo 'SSH connection successful!'"
+              git_deployer_742c4e616f_524420@pvk.25e.myftpupload.com "echo 'SSH connection successful!'"
 
       - name: Synchronize Files with GoDaddy WordPress Hosting Server
         uses: godaddy-wordpress/gd-wordpress-deployer@v1
         with:
           remote_host: "pvk.25e.myftpupload.com"
-          ssh_user: "git_deployer_e7667b119d_524420"
+          ssh_user: "git_deployer_742c4e616f_524420"
           ssh_private_key: ${{secrets.GODADDY}}
           deployment_dest: ${{ github.event.inputs.deployment_dest }}
           enable_health_check: "yes"
