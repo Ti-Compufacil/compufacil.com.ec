@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       deployment_dest:
-        description: 'Target server directory, leave blank for root directory'
+        description: ''
         required: false
         default: ''
 jobs:
