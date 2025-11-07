@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       deployment_dest:
-        description: ''
+        description: '/html'
         required: false
         default: ''
 jobs:
