@@ -26,6 +26,6 @@ jobs:
         with:
           remote_host: "pvk.25e.myftpupload.com"
           ssh_user: "git_deployer_e7667b119d_524420"
-          ssh_private_key: ${{secrets.GODADDY_SECRET}}
+          ssh_private_key: ${{secrets.GODADDY}}
           deployment_dest: ${{ github.event.inputs.deployment_dest }}
           enable_health_check: "yes"
